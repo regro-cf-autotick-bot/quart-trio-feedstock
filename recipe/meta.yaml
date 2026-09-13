@@ -1,13 +1,13 @@
 {% set name = "Quart-Trio" %}
-{% set version = "0.11.1" %}
+{% set version = "0.13.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_').lower() }}-{{ version }}.tar.gz
-  sha256: 149c9c65c2faafdf455a4461b600e1983b71e593b6f8c8b91b592bbda36cea98
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_').lower() }}-{{ version }}.tar.gz
+  sha256: 76617d2651ab42824ff8ee53a7bde8e482a8543aac4381f8333f8e97ca90f46f
 
 build:
   noarch: python
@@ -21,7 +21,7 @@ requirements:
     - poetry-core >=1.0.0
   run:
     - python >={{ python_min }}
-    - quart >=0.19
+    - quart >=0.23
     - trio >=0.19.0
     - hypercorn >=0.12.0
     - exceptiongroup >=1.1.0
